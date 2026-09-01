@@ -2,6 +2,8 @@
 
 Project học tập kết hợp C11 và C++17, lấy cảm hứng từ layering AUTOSAR Classic/Vector MICROSAR trên ECU AURIX nhưng **không chứa source/config Toshiba, Vector hay Infineon**.
 
+Project nay đã có thêm **Vehicle Motion extension**: kinematic bicycle model, ACC-like longitudinal PID/gap control, lateral lane-centering controller, CSV scenario simulation và deterministic tests.
+
 ## Use case
 
 ECU nhận radar và camera frame, validate counter/timestamp, fuse object gần nhất, tính cảnh báo va chạm, đóng gói ADAS status để truyền. Nếu sensor timeout hoặc corrupt, feature chuyển degraded/fault; DEM-like layer ghi event. Khi shutdown, pipeline drain và NvM-like state được commit trước khi OFF.
@@ -49,6 +51,7 @@ cmake -S . -B build
 cmake --build build
 ctest --test-dir build --output-on-failure
 ./build/adas_ecu_demo
+./build/adas_motion_sim > motion.csv
 ```
 
 ## Safety disclaimer

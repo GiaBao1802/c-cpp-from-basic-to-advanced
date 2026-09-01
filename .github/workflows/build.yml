@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: cmake -S . -B build
+      - run: cmake -S . -B build -DADAS_ENABLE_GTEST=ON
       - run: cmake --build build
       - run: ctest --test-dir build --output-on-failure
       - name: Verify standalone Makefile
@@ -24,6 +24,6 @@ jobs:
           CFLAGS: -fsanitize=address,undefined -fno-omit-frame-pointer
           CXXFLAGS: -fsanitize=address,undefined -fno-omit-frame-pointer
           LDFLAGS: -fsanitize=address,undefined
-        run: cmake -S . -B build-sanitize
+        run: cmake -S . -B build-sanitize -DADAS_ENABLE_GTEST=ON
       - run: cmake --build build-sanitize
       - run: ctest --test-dir build-sanitize --output-on-failure

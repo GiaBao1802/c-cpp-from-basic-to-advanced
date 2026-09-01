@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.16)
 project(automotive_c_cpp_learning LANGUAGES C CXX)
 
+option(ADAS_ENABLE_GTEST "Fetch GoogleTest and build ADAS gTest examples" OFF)
+
 find_package(Threads REQUIRED)
 
 set(CMAKE_C_STANDARD 11)
@@ -36,3 +38,26 @@ target_link_libraries(adas_ecu_demo PRIVATE adas_domain)
 add_executable(adas_project_tests final_project/tests/test_project.cpp)
 target_link_libraries(adas_project_tests PRIVATE adas_domain)
 add_test(NAME adas_project_tests COMMAND adas_project_tests)
+
+add_executable(adas_motion_sim final_project/app/motion_sim.cpp)
+target_include_directories(adas_motion_sim PRIVATE final_project/include)
+
+add_executable(vehicle_motion_tests final_project/tests/test_vehicle_motion.cpp)
+target_include_directories(vehicle_motion_tests PRIVATE final_project/include)
+add_test(NAME vehicle_motion_tests COMMAND vehicle_motion_tests)
+add_test(NAME adas_motion_scenario COMMAND adas_motion_sim)
+
+if(ADAS_ENABLE_GTEST)
+  include(FetchContent)
+  FetchContent_Declare(
+    googletest
+    URL https://github.com/google/googletest/archive/refs/tags/v1.15.2.tar.gz
+  )
+  set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+  FetchContent_MakeAvailable(googletest)
+  add_executable(vehicle_motion_gtests final_project/tests/vehicle_motion_gtest.cpp)
+  target_include_directories(vehicle_motion_gtests PRIVATE final_project/include)
+  target_link_libraries(vehicle_motion_gtests PRIVATE GTest::gtest_main)
+  include(GoogleTest)
+  gtest_discover_tests(vehicle_motion_gtests)
+endif()

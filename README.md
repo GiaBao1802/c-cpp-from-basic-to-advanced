@@ -47,6 +47,10 @@ flowchart LR
 
 [ADAS ECU Reference Platform](final_project/README.md) là project C/C++ tích hợp lớn nhất: AUTOSAR-like C platform, C/C++ ABI, callback, bounded queue, fusion/decision, concurrency, patterns, DEM/NvM lifecycle và integration tests.
 
+## Middle ADAS Vehicle Motion Track
+
+[Chương trình 24 tuần theo JD thị trường](middle_adas/README.md) bổ sung vehicle dynamics, longitudinal/lateral control, ACC/LKA/AEB architecture, gTest–MIL/SIL/HIL, ASPICE, ISO 26262/SOTIF, requirement engineering, estimation và stakeholder delivery.
+
 ## Lộ trình đề xuất
 
 - Phase 1 (4 tuần): C nền tảng, pointer/memory, modular C và embedded concurrency.
