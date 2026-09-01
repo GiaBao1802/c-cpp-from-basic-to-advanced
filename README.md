@@ -43,6 +43,10 @@ flowchart LR
 | 20 | [ADAS case study](automotive/02_adas_case_study.md) | sensor pipeline và deterministic design |
 | 21 | [Bài tập và project](workbook/exercises_and_projects.md) | portfolio + phỏng vấn |
 
+## Final project hoàn chỉnh
+
+[ADAS ECU Reference Platform](final_project/README.md) là project C/C++ tích hợp lớn nhất: AUTOSAR-like C platform, C/C++ ABI, callback, bounded queue, fusion/decision, concurrency, patterns, DEM/NvM lifecycle và integration tests.
+
 ## Lộ trình đề xuất
 
 - Phase 1 (4 tuần): C nền tảng, pointer/memory, modular C và embedded concurrency.

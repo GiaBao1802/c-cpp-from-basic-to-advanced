@@ -14,3 +14,16 @@ jobs:
       - run: ctest --test-dir build --output-on-failure
       - name: Verify standalone Makefile
         run: make -C examples clean all
+
+  sanitizers:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure ASan and UBSan
+        env:
+          CFLAGS: -fsanitize=address,undefined -fno-omit-frame-pointer
+          CXXFLAGS: -fsanitize=address,undefined -fno-omit-frame-pointer
+          LDFLAGS: -fsanitize=address,undefined
+        run: cmake -S . -B build-sanitize
+      - run: cmake --build build-sanitize
+      - run: ctest --test-dir build-sanitize --output-on-failure
