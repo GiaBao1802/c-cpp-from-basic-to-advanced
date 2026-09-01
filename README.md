@@ -1,4 +1,4 @@
-# C/C++ từ cơ bản đến nâng cao cho Automotive Software
+# C/C++ từ zero đến Senior — Embedded, Automotive và Linux
 
 Giáo trình tự học C và C++ theo hướng **hiểu bản chất → viết code an toàn → biết dùng ở đâu trong ECU**. Mỗi phần kết nối kiến thức ngôn ngữ với AUTOSAR Classic, MCAL, OS, communication, diagnostics và ADAS.
 
@@ -30,14 +30,28 @@ flowchart LR
 | 07 | [Modern C++ nâng cao](book/07_modern_cpp.md) | template, STL, concurrency, ADAS |
 | 08 | [AUTOSAR mapping](automotive/01_autosar_mapping.md) | MCAL, OS, COM, DCM, NvM |
 | 09 | [ADAS case study](automotive/02_adas_case_study.md) | sensor pipeline và deterministic design |
-| 10 | [Bài tập và project](workbook/exercises_and_projects.md) | portfolio + phỏng vấn |
+| 10 | [Advanced C](senior/01_advanced_c.md) | function pointer, callback, macro, pragma, OOP C |
+| 11 | [Toolchain và linker](senior/02_build_toolchain_linker.md) | Make, CMake, ELF, map, linker script |
+| 12 | [DSA](senior/03_dsa.md) | complexity, container, algorithm và real-time trade-off |
+| 13 | [OOP C++ chuyên sâu](senior/04_cpp_oop_ownership.md) | inheritance, virtual, RAII, smart pointer |
+| 14 | [Template và STL](senior/05_templates_stl.md) | generic programming và allocation behavior |
+| 15 | [Multithreading](senior/06_multithreading.md) | memory model, atomic, lock, condition variable |
+| 16 | [Linux và IPC](senior/07_linux_ipc.md) | process, thread, socket, pipe, shared memory, epoll |
+| 17 | [Design patterns](senior/08_design_patterns.md) | patterns phù hợp embedded/ADAS |
+| 18 | [Senior engineering](senior/09_senior_engineering.md) | architecture, performance, debugging, review |
+| 19 | [AUTOSAR mapping](automotive/01_autosar_mapping.md) | MCAL, OS, COM, DCM, NvM |
+| 20 | [ADAS case study](automotive/02_adas_case_study.md) | sensor pipeline và deterministic design |
+| 21 | [Bài tập và project](workbook/exercises_and_projects.md) | portfolio + phỏng vấn |
 
 ## Lộ trình đề xuất
 
-- Tuần 1–2: chương 01–03, làm toàn bộ bài C nhỏ.
-- Tuần 3: chương 04–05, lab ISR/ring buffer/state machine.
-- Tuần 4–5: chương 06–07, Modern C++.
-- Tuần 6: hai case study Automotive và project cuối khóa.
+- Phase 1 (4 tuần): C nền tảng, pointer/memory, modular C và embedded concurrency.
+- Phase 2 (4 tuần): Advanced C, toolchain/linker, MISRA và testing.
+- Phase 3 (6 tuần): DSA, OOP C++, ownership, template và STL.
+- Phase 4 (5 tuần): multithreading, Linux system programming và IPC.
+- Phase 5 (5 tuần): patterns, architecture, performance và Automotive/ADAS projects.
+
+Chi tiết năng lực và tiêu chí senior: [Senior roadmap](senior/00_senior_roadmap.md).
 
 Mỗi buổi 90 phút: 30 phút lý thuyết, 35 phút code, 15 phút debug/test, 10 phút tự giải thích thành tiếng.
 

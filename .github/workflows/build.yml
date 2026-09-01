@@ -12,3 +12,5 @@ jobs:
       - run: cmake -S . -B build
       - run: cmake --build build
       - run: ctest --test-dir build --output-on-failure
+      - name: Verify standalone Makefile
+        run: make -C examples clean all

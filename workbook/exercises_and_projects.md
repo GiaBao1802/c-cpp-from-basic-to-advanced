@@ -37,6 +37,28 @@ Nhận object list recorded/synthetic, validate timestamp/range, tính time-to-c
 - Có trace requirement → design → test.
 - Giải thích được tại sao chọn C/C++, allocation và synchronization.
 
+## Senior capstone — Linux ADAS gateway
+
+Xây daemon C++20 nhận hai stream qua socket, parse frame an toàn, đưa vào bounded queues, đồng bộ timestamp, chạy fusion stub và publish qua Unix domain socket. Dùng object pool hoặc PMR, graceful shutdown, metrics và structured logs. Viết một C adapter cho CAN-like transport và build bằng CMake.
+
+Artifacts bắt buộc:
+
+1. Context/component/sequence diagram.
+2. Ownership và lock-order table.
+3. Protocol specification có version/length/endian.
+4. Unit, integration, stress và sanitizer test.
+5. Benchmark p50/p95/p99, memory high-water và overload result.
+6. Failure injection: peer disconnect, malformed frame, queue full, slow consumer.
+7. Design review ghi rõ alternative đã loại và lý do.
+
+## Senior review drills
+
+- Một callback được gọi từ ISR nhưng implementation dùng mutex: phân tích failure.
+- `shared_ptr` cycle giữa pipeline stages: phát hiện và redesign ownership.
+- Shared-memory reader crash khi writer update layout: thiết kế versioning/commit marker.
+- Linker báo RAM overflow 12 KiB: đọc map, phân loại `.data/.bss/stack/heap` và đề xuất.
+- CAN gateway miss deadline sau thêm logging: thiết kế measurement và fix không làm mất observability.
+
 ## Câu hỏi phỏng vấn
 
 1. Array khác pointer thế nào?

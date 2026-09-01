@@ -2,5 +2,8 @@ build/
 *.exe
 *.o
 *.obj
+*.d
+*.map
+callback_demo
 .vscode/
 .idea/
