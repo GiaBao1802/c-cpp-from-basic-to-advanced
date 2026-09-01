@@ -47,14 +47,6 @@ target_include_directories(vehicle_motion_tests PRIVATE final_project/include)
 add_test(NAME vehicle_motion_tests COMMAND vehicle_motion_tests)
 add_test(NAME adas_motion_scenario COMMAND adas_motion_sim)
 
-add_library(diag_server STATIC diagnostic_stack/src/diag_server.cpp)
-target_include_directories(diag_server PUBLIC diagnostic_stack/include)
-add_executable(diag_demo diagnostic_stack/app/diag_demo.cpp)
-target_link_libraries(diag_demo PRIVATE diag_server)
-add_executable(diag_tests diagnostic_stack/tests/test_diag.cpp)
-target_link_libraries(diag_tests PRIVATE diag_server)
-add_test(NAME diag_tests COMMAND diag_tests)
-
 if(ADAS_ENABLE_GTEST)
   include(FetchContent)
   FetchContent_Declare(
