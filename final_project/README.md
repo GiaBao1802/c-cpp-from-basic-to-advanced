@@ -66,3 +66,9 @@ ctest --test-dir build --output-on-failure
 7. `src_cpp/ipc_publisher.cpp`: Linux IPC/RAII.
 8. `tests/test_project.cpp`: expected behavior.
 9. `docs/requirements_and_traceability.md` và `docs/knowledge_coverage.md`.
+
+## Giáo trình có hình minh họa
+
+- [Project Study Guide: giải thích toàn bộ flow](docs/01_project_study_guide.md)
+- [Debugging và bài tập mở rộng](docs/02_debugging_and_exercises.md)
+- [Đánh giá mức sẵn sàng Junior ADAS](docs/03_junior_adas_readiness.md)
