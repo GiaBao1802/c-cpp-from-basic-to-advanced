@@ -51,6 +51,10 @@ flowchart LR
 
 [Chương trình 24 tuần theo JD thị trường](middle_adas/README.md) bổ sung vehicle dynamics, longitudinal/lateral control, ACC/LKA/AEB architecture, gTest–MIL/SIL/HIL, ASPICE, ISO 26262/SOTIF, requirement engineering, estimation và stakeholder delivery.
 
+## AUTOSAR Diagnostic Stack Track
+
+[Khóa DCM–UDS–CanTp thực hành](diagnostic_stack/README.md) đi từ UDS request qua CanIf/CanTp/PduR/DCM DSL–DSD–DSP tới DID/RID callback, DEM/NvM, kèm synthetic variant-coding requirement, ISO-TP lab và negative-response tests.
+
 ## Lộ trình đề xuất
 
 - Phase 1 (4 tuần): C nền tảng, pointer/memory, modular C và embedded concurrency.
